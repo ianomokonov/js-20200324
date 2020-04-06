@@ -2,7 +2,7 @@ export default class NotificationMessage {
 
     element;
 
-    constructor(message, { duration = 1000, type = 'success' }) {
+    constructor(message, { duration = 1000, type = 'success' } = { duration: 1000, type: 'success' }) {
         this.message = message;
         this.duration = duration;
         this.type = type;
@@ -31,9 +31,12 @@ export default class NotificationMessage {
         this.element.remove();
     }
 
-    show() {
-        const element = document.querySelector('.alert');
-        element.append(this.element);
+    destroy(){
+        this.remove();
+    }
+
+    show(targetElement = document.body) {
+        targetElement.append(this.element);
         setTimeout(() => {
             this.remove();
         }, this.duration)
