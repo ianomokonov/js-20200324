@@ -5,15 +5,25 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<button id="btn1">Show simple message!</button>
+<button id="btn1">Show success message!</button>
+<button id="btn2">Show error message!</button>
+<div class="alert"></div>
 
 <script type="module">
   import NotificationMessage from './notification.js';
 
   btn1.addEventListener('click', () => {
-    const notification = new NotificationMessage('hello world', {
+    const notification = new NotificationMessage('Привет мир!', {
       duration: 2000,
       type: 'success'
+    });
+
+    notification.show();
+  });
+  btn2.addEventListener('click', () => {
+    const notification = new NotificationMessage('Привет мир!', {
+      duration: 2000,
+      type: 'error'
     });
 
     notification.show();
