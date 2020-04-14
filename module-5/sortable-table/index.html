@@ -47,6 +47,19 @@
         sortable: true,
         sortType: 'number',
       },
+      {
+        id: 'status',
+        title: 'Status',
+        sortable: true,
+        sortType: 'custom',
+        sortFunction: (a,b)=>{
+          const map = {
+            "Новый" : "0",
+            "Подтвержден" : "1",
+          }
+          return map[a] - map[b];
+        }
+      },
     ];
     const sorting = { field: 'title', order: 'asc' };
     const sortableTable = new SortableTable(header, { data, sorting });

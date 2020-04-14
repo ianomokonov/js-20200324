@@ -16,7 +16,7 @@ export default [
       },
       "weight": 2
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/872403.jpg",
@@ -60,7 +60,7 @@ export default [
       },
       "weight": 4
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/472608.jpg",
@@ -92,7 +92,7 @@ export default [
       },
       "weight": 4
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/460399.jpg",
@@ -136,7 +136,7 @@ export default [
       },
       "weight": 2
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/1119998.jpg",
@@ -168,7 +168,7 @@ export default [
       },
       "weight": 1
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/944502.jpg",
@@ -212,7 +212,7 @@ export default [
       },
       "weight": 1
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/1300788.jpg",
@@ -240,7 +240,7 @@ export default [
       },
       "weight": 2
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/1304719.jpg",
@@ -276,7 +276,7 @@ export default [
       },
       "weight": 6
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/905979.jpg",
@@ -304,7 +304,7 @@ export default [
       },
       "weight": 13
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/642251.jpg",
@@ -332,7 +332,7 @@ export default [
       },
       "weight": 4
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/460710.jpg",
@@ -376,7 +376,7 @@ export default [
       },
       "weight": 1
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg/820218.jpg",
@@ -404,7 +404,7 @@ export default [
       },
       "weight": 3
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/863141.jpg",
@@ -448,7 +448,7 @@ export default [
       },
       "weight": 2
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/890067.jpg",
@@ -476,7 +476,7 @@ export default [
       },
       "weight": 4
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/365751.jpg",
@@ -520,7 +520,7 @@ export default [
       },
       "weight": 1
     },
-    "status": 0,
+    "status": "Новый",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/886464.jpg",
@@ -564,7 +564,7 @@ export default [
       },
       "weight": 2
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/297777.jpg",
@@ -608,7 +608,7 @@ export default [
       },
       "weight": 2
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/1304516.jpg",
@@ -648,7 +648,7 @@ export default [
       },
       "weight": 10
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/167313.jpg",
@@ -676,7 +676,7 @@ export default [
       },
       "weight": 1
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/311686.jpg",
@@ -704,7 +704,7 @@ export default [
       },
       "weight": 2
     },
-    "status": 1,
+    "status": "Подтвержден",
     "images": [
       {
         "url": "http://magazilla.ru/jpg_zoom1/426353.jpg",

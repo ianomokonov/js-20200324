@@ -1,5 +1,6 @@
 export default class SortableTable {
   element;
+  sortEventListener;
   subElements = {};
   headersConfig = [];
   data = [];
@@ -12,7 +13,6 @@ export default class SortableTable {
     if (sorting.field) {
       this.sort(sorting.field, sorting.order);
     }
-    this.initEventListeners();
   }
 
   render() {
@@ -20,19 +20,21 @@ export default class SortableTable {
     element.innerHTML = this.getTable(this.data);
     this.element = element.firstElementChild;
     this.subElements = this.getSubElements(this.element);
+    this.initEventListeners();
   }
 
   initEventListeners() {
-    this.subElements.header.addEventListener('click', event => {
-      const closest = event.target.closest("div.sortable-table__cell");
-      if(!closest){
+    this.sortEventListener = (event) => {
+      const closest = event.target.closest('div.sortable-table__cell');
+      if (!closest) {
         return;
       }
       const dataset = closest.dataset;
-      if(dataset.sortable === "true"){
+      if (dataset.sortable === 'true') {
         this.sort(dataset.name, dataset.order === 'asc' ? 'desc' : 'asc');
       }
-    })
+    };
+    this.subElements.header.addEventListener('click', this.sortEventListener);
   }
 
   getTable() {
@@ -97,6 +99,7 @@ export default class SortableTable {
   }
 
   destroy() {
+    this.subElements.header.removeEventListener('click', this.sortEventListener);
     this.remove();
     this.subElements = {};
   }
@@ -108,7 +111,7 @@ export default class SortableTable {
   }
 
   sortData(field, order) {
-    const { sortType } = this.headersConfig.find((item) => item.id === field);
+    const { sortType, sortFunction } = this.headersConfig.find((item) => item.id === field);
     let direction = order === 'asc' ? 1 : -1;
 
     return this.data.sort(function (a, b) {
@@ -117,6 +120,8 @@ export default class SortableTable {
           return direction * (a[field] - b[field]);
         case 'string':
           return direction * a[field].localeCompare(b[field], 'default', { caseFirst: 'upper' });
+        case 'custom':
+          return direction * sortFunction(a[field], b[field]);
         default:
           return direction * a[field].localeCompare(b[field], 'default', { caseFirst: 'upper' });
       }
