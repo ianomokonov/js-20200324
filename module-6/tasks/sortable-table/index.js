@@ -6,7 +6,7 @@ export default class SortableTable {
   element;
   subElements = {};
   data = [];
-  pageSize = 30;
+  pageSize = 0;
 
   constructor(
     headersConfig = [],
@@ -43,7 +43,7 @@ export default class SortableTable {
       _sort: id,
       _order: order,
       _start: 0,
-      _end: 30,
+      _end: this.pageSize,
     };
     Object.entries(params).forEach(([key, value]) => {
       this.url.searchParams.set(key, value);
@@ -65,6 +65,16 @@ export default class SortableTable {
       }
     };
     this.subElements.header.addEventListener('click', this.sortEventListener);
+    this.subElements.emptyPlaceholder.querySelector('button').addEventListener('click', this.resetFilters);
+  }
+
+  resetFilters = () => {
+    this.sorted = {
+      id: this.headersConfig.find((item) => item.sortable).id,
+      order: 'asc',
+    }
+    this.pageSize = 30;
+    this.sort(this.sorted.id, this.sorted.order);
   }
 
   getTable() {
@@ -73,7 +83,14 @@ export default class SortableTable {
         ${this.getTableHeader()}
         <div data-elem="body" class="sortable-table__body">
           ${this.getTableBody()}
-        </div>               
+        </div>  
+        <div data-elem="loading" class="loading-line sortable-table__loading-line"></div>
+        <div data-elem="emptyPlaceholder" class="sortable-table__empty-placeholder">
+          <div>
+            <p>No products satisfies your filter criteria</p>
+            <button type="button" class="button-primary-outline">Reset all filters</button>
+          </div>
+        </div>             
       </div>`;
   }
 
@@ -106,7 +123,6 @@ export default class SortableTable {
     for (let elem of elems) {
       result[elem.dataset.elem] = elem;
     }
-
     return result;
   }
 
@@ -135,7 +151,14 @@ export default class SortableTable {
   }
 
   async sort(field, order) {
+    this.subElements.loading.style.display = "block";
+    this.subElements.emptyPlaceholder.style.display = "none";
+    this.subElements.body.innerHTML = '';
     this.data = await this.loadData(field, order);
+    this.subElements.loading.style.display = "none";
+    if(!this.data?.length){
+      this.subElements.emptyPlaceholder.style.display = "block";
+    }
     this.subElements.header.innerHTML = this.getTableHeaderRows(field, order);
     this.subElements.body.innerHTML = this.getTableBody(this.data);
   }
