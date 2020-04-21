@@ -147,9 +147,9 @@
   color: var(--dark-blue);
 }
 
-.sortable-table.sortable-table_loading .sortable-table__body {
+/* .sortable-table.sortable-table_loading .sortable-table__body {
   display: none;
-}
+} */
 
 .sortable-table.sortable-table_loading .sortable-table__loading-line {
   display: grid;
