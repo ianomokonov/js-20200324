@@ -11,13 +11,14 @@
       width: 310px;
       height: 15px;
       margin: 5px;
+      position: relative;
     }
 
     .thumb {
       width: 10px;
       height: 25px;
       border-radius: 3px;
-      position: relative;
+      position: absolute;
       left: 10px;
       top: -5px;
       background: blue;
@@ -30,7 +31,8 @@
 
 <div id="root"></div>
 
-<script>
+<script type="module">
+  import DoubleSlider from './index.js';
 
   class Slider {
     element; // HTMLElement;
@@ -122,7 +124,7 @@
     }
   }
 
-  const slider = new Slider();
+  const slider = new DoubleSlider();
 
   root.append(slider.element);
 </script>
