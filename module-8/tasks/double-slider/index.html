@@ -12,6 +12,10 @@
 
     const slider = new DoubleSlider();
 
+    slider.element.addEventListener('position-changed', (event) => {
+      console.log(event.detail)
+    })
+
     root.append(slider.element);
   </script>
 </body>
